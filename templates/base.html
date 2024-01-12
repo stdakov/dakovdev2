@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <meta property="og:image" content="/img/ProfilePhoto-400.jpg" /> -->
+
+    {% if page %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% elif config.description %}
+    <meta name="description" content="{{ config.description }}" />
+    {% endif %}
+    {% elif config.description %}
+    <meta name="description" content="{{ config.description }}" />
+    {% endif %}
+
+    <title>{% if page and page.title %}{{page.title}} | {% endif %}{{ config.title }}</title>
+
+    {% if config.generate_feed %}
+    <link rel="alternate" type={% if config.feed_filename=="atom.xml" %}"application/atom+xml"{% else
+        %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    {% endif %}
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    {% block stylesheets %} {% endblock %}
+
+    <script async defer data-website-id="720e97e2-73c8-4729-8f0b-c6cc96a3f14b" src="https://st.dakovdev.com/umami.js"></script>
+</head>
+
+
+<body>
+    <div class="grid-container">
+        <!-- <div class="item-header">Header</div> -->
+        <div class="item-menu">
+            <aside class="me">
+                <div class="profile-photo-wrapper">
+                    <!-- <img src="/img/ProfilePhoto-400.jpg" alt="Peter Todorov Profile Picture" class="profile-photo" /> -->
+                </div>
+                <div class="contact-info">
+                    <img src="/icons/avatar.png">
+                    <h1><a href="/">Stanislav Dakov</a></h1>
+                    <hr />
+                    <span title="What I am">Software Developer; Problem solver; Dad; Adventurer;</span>
+                    <hr />
+                    <div class="find_me">
+                        Find me in:
+                        <ul>
+                            <li><a href="https://www.linkedin.com/in/stanislav-dakov"><img src="/icons/linkedin.png"/>LinkedIn</a></li>
+                            <li><a href="https://twitter.com/StanislavDakov"><img src="/icons/twitter.png"/>Twitter</a></li>
+                            <li><a href="https://github.com/stdakov"><img src="/icons/github.png"/>Github</a></li>
+                        </ul>
+                    </div>
+                    <hr />
+                    <a class="" href="/about-me">About Me</a>
+                    <a class="" href="/blog">Blog</a>
+                    <a class="" href="/publication">Publications</a>
+                </div>
+            </aside>
+        </div>
+        <div class="item-content">
+            <div class="content">
+            {% block content %} {% endblock %}
+            </div>
+        </div>
+      </div>
+    <main class="{% if not current_path or current_path == '/' or current_path == '/about-me/' %}index-page{% endif %}">
+        
+        
+    </main>
+
+    {% include "partials/github-corner.html" %}
+</body>
+
+</html>

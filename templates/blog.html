@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% set blogs = get_section(path="blog/_index.md") %}
+
+{% for page in blogs.pages | sort(attribute="date") | reverse %}
+<section class="post-list-item">
+    <h1 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
+    <div class="post-summary">
+        {{ page.summary | safe }}
+        <a href="{{ page.permalink | safe }}">...read on</a>
+    </div>
+    <div class="post-info">{{ page.date }}</div>
+    <div class="post-info">{{ page.reading_time }} min read</div>
+</section>
+{% endfor %}
+
+{% endblock content %}
