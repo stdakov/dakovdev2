@@ -4,10 +4,10 @@
     </IfModule>
 
     RewriteEngine On
-
+    ErrorDocument 404 /404.html
     # ensure www.
-    RewriteCond %{HTTP_HOST} !^www\. [NC]
-    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#    RewriteCond %{HTTP_HOST} !^www\. [NC]
+#    RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # ensure https
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
@@ -15,16 +15,18 @@
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
     # Handle Authorization Header
-    RewriteCond %{HTTP:Authorization} .
-    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+  #  RewriteCond %{HTTP:Authorization} .
+  #  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
     # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+ #   RewriteCond %{REQUEST_FILENAME} !-d
+ #   RewriteCond %{REQUEST_URI} (.+)/$
+ #   RewriteRule ^ %1 [L,R=301]
 
     # Send Requests To Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.html [L]
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^ index.html [L]
+#    RewriteRule ^ - [R=404,L]
+#    ErrorDocument 404 https://%{HTTP_HOST}/404.html
 </IfModule>
