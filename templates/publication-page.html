@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-    {{ page.title }}
-    <div class="post-info">{{ page.date }}</div>
-</h1>
+<article class="blog-post">
+    <h2 class="display-5 link-body-emphasis mb-1">{{ page.title }}</h2>
+    <p class="blog-post-meta">{{ page.date }}//{{ page.reading_time }} min read</p>
+    <hr >
+
+    {{ page.content | safe }}
+</article>
 
 {{ page.content | safe }}
 

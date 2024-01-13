@@ -24,53 +24,64 @@
         %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
     {% endif %}
 
+    <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     {% block stylesheets %} {% endblock %}
 
-    <script async defer data-website-id="720e97e2-73c8-4729-8f0b-c6cc96a3f14b" src="https://st.dakovdev.com/umami.js"></script>
+    <script async defer data-website-id="720e97e2-73c8-4729-8f0b-c6cc96a3f14b"
+        src="https://st.dakovdev.com/umami.js"></script>
 </head>
 
 
 <body>
-    <div class="grid-container">
-        <!-- <div class="item-header">Header</div> -->
-        <div class="item-menu">
-            <aside class="me">
-                <div class="profile-photo-wrapper">
-                    <!-- <img src="/img/ProfilePhoto-400.jpg" alt="Peter Todorov Profile Picture" class="profile-photo" /> -->
-                </div>
-                <div class="contact-info">
-                    <img src="/img/avatar2.png">
-                    <h1><a href="/">Stanislav Dakov</a></h1>
+    <div class="container px-4 py-5">
+        <a href="/" style="text-decoration: none;"><h2 class="pb-2 border-bottom"><img src="/img/logo.png" width="40px" /> @StanislavDakov</h2></a>
+
+        <div class="row g-5">
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <img class="img-fluid" src="/img/avatar2.png">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <p class="mb-0">Customize this section to tell your visitors a little bit about your
+                            publication, writers, content, or something else entirely. Totally up to you.</p>
+                    </div>
                     <hr />
                     <span title="What I am">Software Developer; Problem solver; Dad; Adventurer;</span>
                     <hr />
                     <div class="find_me">
                         Find me in:
-                        <ul>
-                            <li><a href="https://www.linkedin.com/in/stanislav-dakov"><img src="/img/linkedin.png"/>LinkedIn</a></li>
-                            <li><a href="https://twitter.com/StanislavDakov"><img src="/img/twitter.png"/>Twitter</a></li>
-                            <li><a href="https://github.com/stdakov"><img src="/img/github.png"/>Github</a></li>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/stanislav-dakov"><img
+                                        src="/img/linkedin.png" />LinkedIn</a></li>
+                            <li><a href="https://twitter.com/StanislavDakov"><img src="/img/twitter.png" />Twitter</a>
+                            </li>
+                            <li><a href="https://github.com/stdakov"><img src="/img/github.png" />Github</a></li>
                         </ul>
                     </div>
                     <hr />
                     <a class="" href="/about-me">About Me</a>
                     <a class="" href="/blog">Blog</a>
                     <a class="" href="/publication">Publications</a>
-                </div>
-            </aside>
-        </div>
-        <div class="item-content">
-            <div class="content">
-            {% block content %} {% endblock %}
-            </div>
-        </div>
-      </div>
-    <main class="{% if not current_path or current_path == '/' or current_path == '/about-me/' %}index-page{% endif %}">
-        
-        
-    </main>
 
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="content">
+                    {% block content %} {% endblock %}
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    </div>
+    <main class="{% if not current_path or current_path == '/' or current_path == '/about-me/' %}index-page{% endif %}">
+
+
+    </main>
+    {% block scripts %} {% endblock %}
+    <script src="/dist/js/bootstrap.js"></script>
     {% include "partials/github-corner.html" %}
 </body>
 

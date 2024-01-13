@@ -1,38 +1,4 @@
-html {}
-
-body {
-    display: flex;
-    flex-direction: row;
-}
-
-.grid-container {
-    display: grid;
-    padding: 15px;
-    gap: 10px;
-}
-
-.item-header {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.item-menu {
-    padding: 5px;
-    grid-column: 1;
-    grid-row: 2;
-    border-right: solid 1px black;
-}
-
-.item-content {
-    padding: 5px;
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.find_me ul{
-    list-style: none;
-}
-.find_me img {
-    width: 20px;
-    vertical-align:middle;
+article img {
+    max-width: 100%;
+    height: auto;
 }
