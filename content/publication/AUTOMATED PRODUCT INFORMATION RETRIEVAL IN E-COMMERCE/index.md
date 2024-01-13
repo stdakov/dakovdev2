@@ -1,9 +1,6 @@
 +++
 title = "AUTOMATED PRODUCT INFORMATION RETRIEVAL IN E-COMMERCE"
 date = 2021-11-03
-description = "The recent paper presents automatic retrieval of publicly available information about products on the Internet, analysis and aggregation of this information
-and sending the relevant notifications to the users. A Telegram bot has been developed, which periodically checks the information for certain products and analyzes the
-retrieved data."
 +++
 
 ## Abstract
