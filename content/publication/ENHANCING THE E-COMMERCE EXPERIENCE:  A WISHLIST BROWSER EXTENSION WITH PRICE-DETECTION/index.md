@@ -13,3 +13,5 @@ Keywords: e-commerce, wish list, price-detection, browser extension, microservic
 ## Introduction
 
 The rise of e-commerce has revolutionized the way we shop, offering convenience, variety, and accessibility at our fingertips. As online shopping continues to dominate the retail landscape, web browser extensions have emerged as powerful tools that can greatly enhance the e-commerce browsing experience. These extensions provide added functionalities and features that can streamline the shopping process, save money, and ensure a secure and personalized experience. Web browser plugins offer several benefits for e-commerce browsing, enhancing the overall shopping experience, and providing users with additional functionality and convenience.
+
+[Dowload full article](123444.pdf)
