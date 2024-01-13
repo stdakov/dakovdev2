@@ -1,6 +1,7 @@
 # The URL the site will be built for
 base_url = "https://dakovdev.com"
-
+title = "Stanislav Dakov"
+description="Welcome to my place!"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
 
