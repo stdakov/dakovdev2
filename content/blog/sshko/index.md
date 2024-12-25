@@ -87,6 +87,7 @@ sshko user@192.168.1.101
 sshko
 ```
 ![Image](screenshot.png)
+
 3. Select your desired server from the dialog box and connect instantly.
 
 Happy SSHing! 🚀
