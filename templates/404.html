@@ -1,9 +1,65 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head><title>Example</title></head>
+<body>
+    <p>Test paragraph</p>
+    <div class="container">
+        <div class="header">Welcome to the site</div>
+        <div class="header row2">Welcome to the site</div>
+        <div class="content">
+            <p id="intro">This is an introduction.
+                <p>More content here.</p>
+            </p>
+            
+        </div>
+        <div class="content2">
+            <p id="intro2">This is an introduction.</p>
+            <p>More content here.1</p>
+            <p>More content here.</p>
+        </div>
+    </div>
+</body>
+</html>;
 
-{% block content %}
-<div class="fof">
-    <h1>404 Page Not Found</h1>
-</div>
-
-<a href="/">Back to Home</a>
-{% endblock content %}
+json = "
+{
+    p: {"value":"Test paragraph"},
+    "container" {
+        "children":"header": {
+            "value":"Welcome to the site"
+        }
+        "header.row2": {
+            "value":"Welcome to the site"
+        }
+        "container": {
+            "children":{
+                "content": {
+                    children:{
+                        "#intro":{
+                            "value":"This is an introduction.",
+                            "children":{
+                                "p":{
+                                    "value":"More content here."
+                                }
+                            }
+                        }
+                    }
+                },
+                "content2": {
+                    children:{
+                        "#intro2":{
+                            "value":"This is an introduction."
+                        },
+                        "p":{
+                            "value":[
+                            "More content here.1",
+                            "More content here."
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+";
