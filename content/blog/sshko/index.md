@@ -10,7 +10,7 @@ Are you someone who constantly juggles between multiple SSH connections but stru
 <!-- more -->
 ## What Is SSHKo?
 
-SSHKo is a lightweight and efficient SSH connection manager designed for those of us who want to streamline the process of connecting to remote servers. With SSHKo, you don’t have to remember each server’s IP address or username. It keeps track of your connections and provides a user-friendly interface to choose from previously used SSH sessions.
+[SSHKo](https://github.com/stdakov/sshko) is a lightweight and efficient SSH connection manager designed for those of us who want to streamline the process of connecting to remote servers. With SSHKo, you don’t have to remember each server’s IP address or username. It keeps track of your connections and provides a user-friendly interface to choose from previously used SSH sessions.
 
 ## Why Use SSHKo?
 If you’re someone who:
@@ -25,10 +25,10 @@ Then SSHKo is perfect for you. It’s lightweight, easy to install, and makes yo
 SSHKo saves every SSH connection you use in a log file (~/.sshLog.txt). Whenever you want to reconnect, it reads this file and displays all previously used connections in an interactive dialog, allowing you to select the desired session.
 
 ## Getting Started
-Follow these steps to start using SSHKo:
+Follow these steps to start using [SSHKo](https://github.com/stdakov/sshko):
 ### Step 1: Install and Set Up SSHKo
 
-1. Copy the `sshko.sh` script to a directory of your choice (e.g., `~/sshko.sh`).
+1. Copy the `sshko.sh` script to a directory of your choice (e.g., `~/sshko.sh`) from [github](https://github.com/stdakov/sshko).
 2. Add an alias for the script in your shell configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```bash
