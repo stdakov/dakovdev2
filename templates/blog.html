@@ -2,17 +2,18 @@
 
 {% block content %}
 
+<h3 class="pb-4 mb-4 border-bottom">Blog</h3>
+
 {% set blogs = get_section(path="blog/_index.md") %}
 
 {% for page in blogs.pages | sort(attribute="date") | reverse %}
 <article class="blog-post">
-    <a href="{{ page.permalink | safe }}"><h2 class="display-5 link-body-emphasis mb-1">{{ page.title }}</h2></a>
-    <p class="blog-post-meta">{{ page.date }}//{{ page.reading_time }} min read</p>
+    <h2 class="h4 mb-2"><a class="article-title" href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+    <p class="article-meta">{{ page.date }} · {{ page.reading_time }} min read</p>
 
     <p>{{ page.summary | safe }}
-        <a href="{{ page.permalink | safe }}">...read on</a></p>
+        <a class="read-more" href="{{ page.permalink | safe }}">Read more &rarr;</a></p>
 </article>
-<hr>
 {% endfor %}
 
 {% endblock content %}

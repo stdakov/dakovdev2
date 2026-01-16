@@ -17,6 +17,26 @@
     <meta name="description" content="{{ config.description }}" />
     {% endif %}
 
+    {% set og_title = config.title %}
+    {% if page and page.title %}
+    {% set og_title = page.title ~ " | " ~ config.title %}
+    {% endif %}
+    {% set og_description = config.description %}
+    {% if page and page.description %}
+    {% set og_description = page.description %}
+    {% endif %}
+    {% set og_url = config.base_url %}
+    {% if page and page.permalink %}
+    {% set og_url = page.permalink %}
+    {% endif %}
+    {% set og_image = get_url(path="/img/logo.png") %}
+
+    <meta property="og:title" content="{{ og_title }}" />
+    <meta property="og:description" content="{{ og_description }}" />
+    <meta property="og:type" content="{% if page %}article{% else %}website{% endif %}" />
+    <meta property="og:url" content="{{ og_url }}" />
+    <meta property="og:image" content="{{ og_image }}" />
+
     <title>{% if page and page.title %}{{page.title}} | {% endif %}{{ config.title }}</title>
 
     {% if config.generate_feed %}
@@ -35,37 +55,43 @@
 <body>
     <div class="head p-4 mb-2">
         <div class="container px-4">
-        <a href="/" style="text-decoration: none;"><h2 class="pb-2"><img src="/img/logo.png" width="40px" /> @StanislavDakov</h2></a>
+            <a class="brand" href="/">
+                <img class="brand-mark" src="/img/logo.png" width="40" height="40" alt="Logo">
+                <div class="brand-text">
+                    <span class="brand-title">Stanislav Dakov</span>
+                    <span class="brand-subtitle">Software developer, writer, and builder</span>
+                </div>
+            </a>
         </div>
     </div>
     <div class="container px-4">
         <div class="row g-5">
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
-                    <img class="img-fluid" src="/img/avatar2.png">
-                    <div class="p-4 mb-3 bg-body-tertiary rounded">
-                        <p class="mb-0">
+                    <img class="img-fluid sidebar-avatar" src="/img/avatar2.png" style="width: 100%; margin-bottom: 20px;">
+                    <div class="p-4 mb-3 rounded sidebar-bio-box">
+                        <p class="mb-0 sidebar-bio">
                             Hi, I am Stanislav Dakov. Welcome to my place. I have started this blog because I think I can share with you interesting stuff.
                         </p>
                     </div>
+                    <nav class="sidebar-menu">
+                        <a class="nav-link" href="/about-me">About Me</a>
+                        <a class="nav-link" href="/blog">Blog</a>
+                        <a class="nav-link" href="/publication">Publications</a>
+                        <a class="nav-link" href="/projects">Personal Projects</a>
+                    </nav>
                     <hr />
-                    <span title="What I am">Software Developer; Problem solver; Dad; Adventurer;</span>
+                    <span class="sidebar-tagline" title="What I am">Software Developer · Problem solver · Dad · Adventurer</span>
                     <hr />
                     <div class="find_me">
-                        Find me in:
+                        Find me on:
                         <ul class="list-unstyled">
-                            <li><a href="https://www.linkedin.com/in/stanislav-dakov"><img
-                                        src="/img/linkedin.png" />LinkedIn</a></li>
-                            <li><a href="https://twitter.com/StanislavDakov"><img src="/img/twitter.png" />Twitter</a>
-                            </li>
-                            <li><a href="https://github.com/stdakov"><img src="/img/github.png" />Github</a></li>
+                            <li><a href="https://www.linkedin.com/in/stanislav-dakov"><img src="/img/linkedin.png" alt="LinkedIn" />LinkedIn</a></li>
+                            <li><a href="https://twitter.com/StanislavDakov"><img src="/img/twitter.png" alt="Twitter" />Twitter</a></li>
+                            <li><a href="https://github.com/stdakov"><img src="/img/github.png" alt="GitHub" />GitHub</a></li>
                         </ul>
                     </div>
                     <hr />
-                    <a class="" href="/about-me">About Me</a>
-                    <a class="" href="/blog">Blog</a>
-                    <a class="" href="/publication">Publications</a>
-                    <a class="" href="/projects">Personal Projects</a>
                 </div>
             </div>
             <div class="col-md-8">

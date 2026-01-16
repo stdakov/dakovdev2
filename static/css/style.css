@@ -1,46 +1,320 @@
+/* Base styles */
+:root {
+    --ink-900: #111827;
+    --ink-700: #374151;
+    --ink-500: #6b7280;
+    --ink-400: #9ca3af;
+    --paper-50: #fafafa;
+    --paper-100: #f4f4f5;
+    --paper-200: #e4e4e7;
+    --accent-600: #2563eb;
+    --accent-500: #3b82f6;
+    --border-soft: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink-700);
+    line-height: 1.7;
+    background-color: var(--paper-50);
+}
+
+a {
+    color: var(--accent-600);
+}
+
 article img {
     max-width: 100%;
     height: auto;
+    border-radius: 6px;
 }
 
+/* Header */
 .head {
-    --s: 37px; /* control the size */
-    
-    --c:#0000,#136ec917 .5deg 119.5deg,#0000 120deg;
-    --g1:conic-gradient(from  60deg at 56.25% calc(425%/6),var(--c));
-    --g2:conic-gradient(from 180deg at 43.75% calc(425%/6),var(--c));
-    --g3:conic-gradient(from -60deg at 50%   calc(175%/12),var(--c));
-    background:
-      var(--g1),var(--g1) var(--s) calc(1.73*var(--s)),
-      var(--g2),var(--g2) var(--s) calc(1.73*var(--s)),
-      var(--g3) var(--s) 0,var(--g3) 0 calc(1.73*var(--s)) 
-      #ffffff12;
-    background-size: calc(2*var(--s)) calc(3.46*var(--s));
-  }
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-soft);
+}
 
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+}
+
+.brand-mark {
+    border-radius: 8px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.brand-title {
+    font-weight: 600;
+    color: var(--ink-900);
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.brand-subtitle {
+    font-size: 0.875rem;
+    color: var(--ink-500);
+}
+
+/* Sidebar */
+.sidebar-avatar {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-bio-box {
+    background-color: #ffffff;
+    border: 1px solid var(--border-soft);
+}
+
+.sidebar-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink-700);
+}
+
+.sidebar-tagline {
+    font-size: 0.875rem;
+    color: var(--ink-500);
+    font-style: italic;
+}
+
+/* Social links */
+.find_me {
+    font-size: 0.9rem;
+    color: var(--ink-700);
+}
+
+.find_me ul {
+    margin-top: 0.5rem;
+}
+
+.find_me li {
+    margin-bottom: 0.4rem;
+}
+
+.find_me a {
+    color: var(--ink-700);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: color 0.2s ease;
+}
+
+.find_me a:hover {
+    color: var(--accent-600);
+    border-color: rgba(37, 99, 235, 0.2);
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+.find_me img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+}
+
+/* Navigation links */
+.nav-link {
+    display: block;
+    padding: 0.55rem 0;
+    margin-bottom: 0;
+    color: var(--ink-700);
+    text-decoration: none;
+    border-radius: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-soft);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-600);
+}
+
+nav .nav-link:last-child {
+    border-bottom: none;
+}
+
+/* Content area */
+.content h3,
+.content h2 {
+    font-weight: 600;
+    color: var(--ink-900);
+    margin-bottom: 1rem;
+}
+
+.content article {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.content article:last-child {
+    margin-bottom: 0;
+}
+
+/* Article links */
+.article-title {
+    color: var(--ink-900);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.article-title:hover {
+    color: var(--accent-600);
+}
+
+/* Meta info (date, reading time) */
+.article-meta {
+    font-size: 0.85rem;
+    color: var(--ink-500);
+    margin-bottom: 0.5rem;
+}
+
+/* Read more link */
+.read-more {
+    font-size: 0.9rem;
+    color: var(--accent-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Code blocks */
 pre {
     padding: 1rem;
     overflow: auto;
+    border-radius: 6px;
+    background-color: var(--paper-100);
+    border: 1px solid var(--border-soft);
 }
-/* The line numbers already provide some kind of left/right padding */
+
 pre[data-linenos] {
     padding: 1rem 0;
 }
+
 pre table td {
     padding: 0;
 }
-/* The line number cells */
+
 pre table td:nth-of-type(1) {
     text-align: center;
     user-select: none;
+    color: #999;
+    padding-right: 1rem;
 }
+
 pre mark {
-    /* If you want your highlights to take the full width */
     display: block;
-    /* The default background colour of a mark is bright yellow */
     background-color: rgba(254, 252, 232, 0.9);
 }
+
 pre table {
     width: 100%;
     border-collapse: collapse;
+}
+
+/* Dividers */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-soft);
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .head {
+        padding: 1.5rem 0;
+    }
+
+    .brand {
+        align-items: flex-start;
+    }
+
+    .brand-title {
+        font-size: 1.3rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .content article {
+        padding: 1.2rem;
+    }
+}
+
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-card {
+    background: #ffffff;
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: var(--accent-500);
+}
+
+.project-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.project-card h4 a {
+    color: var(--ink-900);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-card h4 a:hover {
+    color: var(--accent-600);
+}
+
+.project-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--ink-500);
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .head h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
