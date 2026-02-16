@@ -3,6 +3,11 @@ template = "projects.html"
 +++
 
 <div class="project-card">
+    <h4><a href="https://favoritecalendar.com/" target="_blank">Favorite Calendar</a></h4>
+    <p>Turn your calendar into something you actually love using. Add fun stickers, highlight important days, and print beautiful personalized calendars in seconds.</p>
+</div>
+
+<div class="project-card">
     <h4><a href="https://eventibg.com/" target="_blank">Bulgarian Events</a></h4>
     <p>Discover and explore events happening across Bulgaria.</p>
 </div>
